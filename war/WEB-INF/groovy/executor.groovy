@@ -1,6 +1,7 @@
 import org.codehaus.groovy.control.MultipleCompilationErrorsException
 
 import com.google.apphosting.api.ApiProxy
+import com.tinkerpop.gremlin.Imports
 
 def scriptText = params.script ?: "'The received script was null.'"
 
@@ -29,17 +30,22 @@ System.setErr(printStream)
 def env = ApiProxy.currentEnvironment
 ApiProxy.clearEnvironmentForCurrentThread()
 def result = ""
+StringBuffer sb = new StringBuffer()
 try {
-	result = new GroovyShell(aBinding).evaluate(scriptText)
+    for (String imps: Imports.getImports()) {
+        sb << "import " + imps + ";";
+    }
+    scriptText = sb.toString() + "com.tinkerpop.gremlin.groovy.Gremlin.load();" + scriptText;
+    result = new GroovyShell(aBinding).evaluate(scriptText)
 } catch (MultipleCompilationErrorsException e) {
-	stacktrace.append(e.message - 'startup failed, Script1.groovy: ')
+    stacktrace.append(e.message - 'startup failed, Script1.groovy: ')
 } catch (Throwable t) {
-	sanitizeStacktrace(t)
-	def cause = t
-	while (cause = cause?.cause) {
-		sanitizeStacktrace(cause)
-	}
-	t.printStackTrace(errWriter)
+    sanitizeStacktrace(t)
+    def cause = t
+    while (cause = cause?.cause) {
+        sanitizeStacktrace(cause)
+    }
+    t.printStackTrace(errWriter)
 } finally {
     ApiProxy.setEnvironmentForCurrentThread(env)
     System.setOut(originalOut)
@@ -65,14 +71,14 @@ def escape(object) {
 
 def sanitizeStacktrace(t) {
     def filtered = [
-        'com.google.', 'org.mortbay.',
-        'java.', 'javax.', 'sun.', 
-        'groovy.', 'org.codehaus.groovy.',
-        'groovyx.gaelyk.', 'executor'
-	]
+            'com.google.', 'org.mortbay.',
+            'java.', 'javax.', 'sun.',
+            'groovy.', 'org.codehaus.groovy.',
+            'groovyx.gaelyk.', 'executor'
+    ]
     def trace = t.stackTrace
     def newTrace = []
-    trace.each { stackTraceElement -> 
+    trace.each { stackTraceElement ->
         if (filtered.every { !stackTraceElement.className.startsWith(it) }) {
             newTrace << stackTraceElement
         }
