@@ -20,7 +20,7 @@ def mkp = new MarkupBuilder(out)
 //mkp.yieldUnescaped '''<?xml version="1.0" encoding="utf-8"?>'''
 
 mkp.feed(xmlns: "http://www.w3.org/2005/Atom") {
-    title "Groovy Web Console for the Groovy Programming Language"
+    title "Gremlin Web Console for the Groovy Programming Language"
     subtitle "Sharing Groovy programming language snippets, one script at a time"
     link href: "http://groovyconsole.appspot.com", rel: "self"
     updated isoTime.format(entities[0].dateCreated)
@@ -38,7 +38,7 @@ mkp.feed(xmlns: "http://www.w3.org/2005/Atom") {
             title titleText
             link href: "http://groovyconsole.appspot.com/script/${entity.key.id}"
             updated isoTime.format(entity.dateCreated)
-            summary "Groovy programming language snippet posted by ${authorText} on the Groovy Web Console on ${prettyDate.format(entity.dateCreated)}."
+            summary "Gremlin snippet posted by ${authorText} on the Groovy Web Console on ${prettyDate.format(entity.dateCreated)}."
             author {
                 name authorText
             }

@@ -1,11 +1,11 @@
 <html>
     <head>
-        <title>Groovy web console - Bad Captcha Result</title>
+        <title>Gremlin web console - Bad Captcha Result</title>
 
         <link rel="alternate"
                 type="application/atom+xml"
                 href="/atom.groovy"
-                title="Groovy Web Console snippets atom feed"
+                title="Gremlin Web Console snippets atom feed"
         />
 
         <link rel="stylesheet" type="text/css" href="/css/redmond/jquery-ui-1.7.1.custom.css"/>
