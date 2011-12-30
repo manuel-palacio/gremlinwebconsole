@@ -54,7 +54,7 @@
                         </a>
                     </td>
                     <td>
-                        <a href="#" onclick="return TweetAndTrack.open(this, 'http://groovyconsole.appspot.com/script/${script.key.id}');">
+                        <a href="#" onclick="return TweetAndTrack.open(this, 'http://gremlinconsole.appspot.com/script/${script.key.id}');">
                             <span style="display:none;">${script.title} (via #groovywebconsole)</span>
                             <table>
                                 <tr>
