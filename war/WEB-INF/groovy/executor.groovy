@@ -35,7 +35,7 @@ try {
     for (String imps: Imports.getImports()) {
         sb << "import " + imps + ";";
     }
-    scriptText = sb.toString() + "com.tinkerpop.gremlin.groovy.Gremlin.load();" + scriptText;
+    scriptText = sb.toString() + "com.tinkerpop.gremlin.groovy.Gremlin.load();" + scriptText
     result = new GroovyShell(aBinding).evaluate(scriptText)
 } catch (MultipleCompilationErrorsException e) {
     stacktrace.append(e.message - 'startup failed, Script1.groovy: ')
