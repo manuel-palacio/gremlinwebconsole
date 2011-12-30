@@ -111,7 +111,7 @@
         <div id="commentsArea">
             <script>
                 var idcomments_acct = 'ffac2056f3a0f603b8799858d3af8299';
-                var idcomments_post_id = 'http://groovyconsole.appspot.com/view.groovy?id=${script.key.id}';
+                var idcomments_post_id = 'http://gremlinconsole.appspot.com/view.groovy?id=${script.key.id}';
                 var idcomments_post_url;
                 </script>
                 <span id="IDCommentsPostTitle" style="display:none"></span>

@@ -36,7 +36,7 @@ mkp.feed(xmlns: "http://www.w3.org/2005/Atom") {
         entry {
             id entity.key.id
             title titleText
-            link href: "http://groovyconsole.appspot.com/script/${entity.key.id}"
+            link href: "http://gremlinconsole.appspot.com/script/${entity.key.id}"
             updated isoTime.format(entity.dateCreated)
             summary "Gremlin snippet posted by ${authorText} on the Groovy Web Console on ${prettyDate.format(entity.dateCreated)}."
             author {
