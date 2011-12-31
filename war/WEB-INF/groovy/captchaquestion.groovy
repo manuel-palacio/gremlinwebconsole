@@ -1,1 +1,0 @@
-out << "${new Random().nextInt(10)} + ${new Random().nextInt(10)}"
