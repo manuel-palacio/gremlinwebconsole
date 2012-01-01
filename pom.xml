@@ -54,7 +54,13 @@
         <dependency>
             <groupId>com.google.appengine</groupId>
             <artifactId>appengine-api-1.0-sdk</artifactId>
-            <version>1.6.1</version>
+            <version>1.6.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.appengine</groupId>
+            <artifactId>appengine-api-labs</artifactId>
+            <version>1.6.0</version>
         </dependency>
 
 
@@ -65,7 +71,7 @@
                     <scope>provided</scope>
                 </dependency>
         -->
-        <dependency>
+        <!--<dependency>
             <groupId>net.sf.jsr107cache</groupId>
             <artifactId>jsr107cache</artifactId>
             <version>1.1</version>
@@ -76,7 +82,7 @@
             <groupId>com.google.appengine</groupId>
             <artifactId>appengine-jsr107cache</artifactId>
             <version>1.6.1</version>
-        </dependency>
+        </dependency>-->
 
 
         <dependency>
@@ -94,27 +100,47 @@
         </dependency>
 
 
-        <dependency>
+       <!-- <dependency>
             <groupId>com.tinkerpop.blueprints</groupId>
             <artifactId>blueprints-neo4j-graph</artifactId>
             <version>1.1</version>
-        </dependency>
+        </dependency>-->
 
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-all</artifactId>
             <version>1.8.4</version>
         </dependency>
+
         <dependency>
             <groupId>com.tinkerpop.gremlin</groupId>
             <artifactId>gremlin-groovy</artifactId>
             <version>1.4</version>
+            <exclusions>
+                            <exclusion>
+                                <groupId>org.codehaus.groovy</groupId>
+                                <artifactId>groovy</artifactId>
+                            </exclusion>
+                        </exclusions>
         </dependency>
+
+        <dependency>
+            <groupId>com.ocpsoft</groupId>
+            <artifactId>ocpsoft-pretty-time</artifactId>
+            <version>1.0.7</version>
+        </dependency>
+
 
         <dependency>
             <groupId>groovyx.gaelyk</groupId>
             <artifactId>gaelyk</artifactId>
-            <version>1.0.0</version>
+            <version>1.1</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.codehaus.groovy</groupId>
+                    <artifactId>groovy</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
 
