@@ -51,11 +51,31 @@
     <dependencies>
 
 
-
         <dependency>
             <groupId>com.google.appengine</groupId>
             <artifactId>appengine-api-1.0-sdk</artifactId>
-            <version>1.5.4</version>
+            <version>1.6.1</version>
+        </dependency>
+
+
+        <!-- <dependency>
+                    <groupId>jcache</groupId>
+                    <artifactId>jcache</artifactId>
+                    <version>1.0-dev-2</version>
+                    <scope>provided</scope>
+                </dependency>
+        -->
+        <dependency>
+            <groupId>net.sf.jsr107cache</groupId>
+            <artifactId>jsr107cache</artifactId>
+            <version>1.1</version>
+
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.appengine</groupId>
+            <artifactId>appengine-jsr107cache</artifactId>
+            <version>1.6.1</version>
         </dependency>
 
 
@@ -72,7 +92,6 @@
             <version>2.1</version>
             <scope>provided</scope>
         </dependency>
-
 
 
         <dependency>
@@ -123,7 +142,6 @@
                     <target>1.6</target>
                 </configuration>
             </plugin>
-
 
 
             <plugin>
