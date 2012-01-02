@@ -65,13 +65,13 @@
 
 
         <!-- <dependency>
-                    <groupId>jcache</groupId>
-                    <artifactId>jcache</artifactId>
-                    <version>1.0-dev-2</version>
-                    <scope>provided</scope>
-                </dependency>
-        -->
-        <!--<dependency>
+            <groupId>jcache</groupId>
+            <artifactId>jcache</artifactId>
+            <version>1.0-dev-2</version>
+
+        </dependency>-->
+
+        <dependency>
             <groupId>net.sf.jsr107cache</groupId>
             <artifactId>jsr107cache</artifactId>
             <version>1.1</version>
@@ -79,10 +79,29 @@
         </dependency>
 
         <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>3.1.0.RELEASE</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>3.1.0.RELEASE</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>3.1.0.RELEASE</version>
+        </dependency>
+
+        <dependency>
             <groupId>com.google.appengine</groupId>
             <artifactId>appengine-jsr107cache</artifactId>
-            <version>1.6.1</version>
-        </dependency>-->
+            <version>1.6.0</version>
+        </dependency>
 
 
         <dependency>
@@ -100,7 +119,7 @@
         </dependency>
 
 
-       <!-- <dependency>
+        <!-- <dependency>
             <groupId>com.tinkerpop.blueprints</groupId>
             <artifactId>blueprints-neo4j-graph</artifactId>
             <version>1.1</version>
@@ -117,11 +136,11 @@
             <artifactId>gremlin-groovy</artifactId>
             <version>1.4</version>
             <exclusions>
-                            <exclusion>
-                                <groupId>org.codehaus.groovy</groupId>
-                                <artifactId>groovy</artifactId>
-                            </exclusion>
-                        </exclusions>
+                <exclusion>
+                    <groupId>org.codehaus.groovy</groupId>
+                    <artifactId>groovy</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
         <dependency>
@@ -158,7 +177,7 @@
     </properties>
 
     <build>
-        <finalName>jsfgae</finalName>
+        <finalName>gremlinconsole</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
