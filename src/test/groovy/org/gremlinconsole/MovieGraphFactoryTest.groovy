@@ -6,11 +6,11 @@ class MovieGraphFactoryTest extends GroovyTestCase {
         MovieGraphFactory movieGraphFactory = new MovieGraphFactory()
 
         movieGraphFactory.createGraph()
-        // assert movieGraphFactory.V.count() > 0
+        assert movieGraphFactory.V.count() > 0
 
     }
 
-    void testFilterFile() {
+   /* void testFilterFile() {
         def newLines = []
         new File("data/u.data").eachLine {
             def components = it.split('\\t')
@@ -25,6 +25,6 @@ class MovieGraphFactoryTest extends GroovyTestCase {
         newLines.each {
             newFile << it + System.getProperty("line.separator")
         }
-    }
+    }*/
 
 }
