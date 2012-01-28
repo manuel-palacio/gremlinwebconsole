@@ -13,7 +13,7 @@
     </head>
 
     <body>
-        <h1><a href="/">Groovy web console</a></h1>
+        <h1><a href="/">Gremlin web console</a></h1>
 
         <table cellspacing="20" style="float:right">
             <tr>

@@ -1,11 +1,11 @@
 <html>
     <head>
-        <title>Groovy web console - Recent scripts ${params.author ? "by " + params.author : ""}</title>
+        <title>Gremlin web console - Recent scripts ${params.author ? "by " + params.author : ""}</title>
 
         <link rel="alternate"
                 type="application/atom+xml"
                 href="/atom.groovy"
-                title="Groovy Web Console snippets atom feed"
+                title="Gremlin Web Console snippets atom feed"
         />
 
         <link rel="stylesheet" type="text/css" href="/css/redmond/jquery-ui-1.7.1.custom.css"/>
@@ -13,7 +13,7 @@
     </head>
 
     <body>
-        <h1><a href="/">Groovy web console</a></h1>
+        <h1><a href="/">Gremlin web console</a></h1>
 
         <table cellspacing="20" style="float:right">
             <tr>

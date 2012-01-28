@@ -10,11 +10,11 @@ class MovieGraphFactoryTest extends GroovyTestCase {
 
     }
 
-   /* void testFilterFile() {
+   void testFilterFile() {
         def newLines = []
         new File("data/u.data").eachLine {
             def components = it.split('\\t')
-            if (components[0].toInteger() <= 500 && components[1].toInteger() <= 500) {
+            if (components[0].toInteger() <= 400 && components[1].toInteger() <= 400) {
                 newLines << it
             }
 
@@ -25,6 +25,6 @@ class MovieGraphFactoryTest extends GroovyTestCase {
         newLines.each {
             newFile << it + System.getProperty("line.separator")
         }
-    }*/
+    }
 
 }

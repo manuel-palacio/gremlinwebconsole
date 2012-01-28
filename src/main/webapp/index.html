@@ -14,7 +14,7 @@
         var editor;
         jQuery(function () {
             editor = CodeMirror.fromTextArea('script', {
-                height:"400px",
+                height:"300px",
                 parserfile:["tokenizejavascript.js", "parsejavascript.js"],
                 stylesheet:"/css/jscolors.css",
                 path:"/js/",
@@ -69,12 +69,28 @@
         </tr>
     </table>
 
+
+    <div style="padding-left: 25px">
+        <label for="graphOption">Choose graph:</label>
+        <select name="graph" id="graphOption">
+            <option value="g = TinkerGraphFactory.createTinkerGraph()">TinkerGraph</option>
+            <option value="g = createFriendsGraph()">FriendsGraph</option>
+            <option value="g = createMovieGraph()">MovieGraph</option>
+        </select>
+        <input type="button" id="loadGraphButton" value="Load"/>
+
+        <input type="button" id="graphInfoButton" value="Info"/>
+
+        <br/>
+    </div>
+
     <div id="button-bar">
         <input id="title" name="title" type="hidden" value="">
         <input id="author" name="author" type="hidden" value="">
         <input id="tags" name="tags" type="hidden" value="">
         <input id="captchaQuestion" name="captchaQuestion" type="hidden" value="">
         <input id="captchaAnswer" name="captchaAnswer" type="hidden" value="">
+
 
         <div id="actionsBreadcrumb">
             <span class="actionsBreadcrumbHead">Actions &nbsp;&#x27A4;</span>
@@ -87,6 +103,26 @@
         </div>
     </div>
 </form>
+
+<div id="friendsGraphInfoDialog" title="Graph Info">
+    <p>Sample of a small cyclic graph</p>
+    <img src="http://dl.dropbox.com/u/1988325/NoSQLandgraphs.jpg" alt=""/>
+</div>
+
+<div id="tinkerGraphInfoDialog" title="Graph Info">
+    <p>Very basic toy graph</p>
+    <img src="https://github.com/tinkerpop/blueprints/raw/master/doc/images/graph-example-1.jpg" alt=""/>
+
+
+</div>
+
+<div id="moviesGraphInfoDialog" title="Graph Info">
+    <p>In-memory graph based on the following <a
+            href="http://markorodriguez.com/2011/09/22/a-graph-based-movie-recommender-engine/">article</a>
+    </p>
+    <img src="http://markorodriguez.files.wordpress.com/2011/09/movielens-schema.png?w=350" alt=""/>
+
+</div>
 
 <div id="dialog" title="Publish your Groovy snippet">
     <label for="dialogTitle">Title</label>

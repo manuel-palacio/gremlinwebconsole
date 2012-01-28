@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component
 import javax.annotation.PostConstruct
 import com.tinkerpop.blueprints.pgm.Graph
 
-@Component
+//@Component
 class MovieGraphFactory {
 
     Graph graph
@@ -38,7 +38,7 @@ class MovieGraphFactory {
                     if (genera) {
                         def hits = graph.idx(Tokens.T.v)[[genera: genera]].iterator()
                         def generaVertex = hits.hasNext() ? hits.next() : graph.addVertex(['type': 'Genera', 'genera': genera]);
-                        graph.addEdge(movieVertex, generaVertex, 'hasGenera');
+                        graph.addEdge(movieVertex, generaVertex, 'hasGenera')
                     }
                 }
                 counter++
@@ -47,7 +47,7 @@ class MovieGraphFactory {
 
         new File('data/u.user').eachLine {def line ->
             def components = line.split('\\|')
-            graph.addVertex(['type': 'User', 'userId': components[0].toInteger(), 'gender': components[2], 'age': components[1].toInteger()]);
+            graph.addVertex(['type': 'User', 'userId': components[0].toInteger(), 'gender': components[2], 'age': components[1].toInteger()])
         }
 
         new File('data/u2.data').eachLine {def line ->

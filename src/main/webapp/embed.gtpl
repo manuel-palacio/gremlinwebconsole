@@ -27,7 +27,7 @@
                 <span class="gwcPublished">
                     <img src="/images/date.png" align="top">
                     Published ${new com.ocpsoft.pretty.time.PrettyTime().format(entity.dateCreated)}
-                    on the <a href="http://gremlinconsole.appspot.com/script/${entity.key.id}">Groovy Web Console</a>
+                    on the <a href="http://gremlinconsole.appspot.com/script/${entity.key.id}">Gremlin Web Console</a>
                 </span>
                 <span class="gwcAuthor">
                     by <img src="/images/user.png" align="top">

@@ -4,12 +4,12 @@
             def script = request.script
         %>
 
-        <title>Groovy web console - ${script?.title ?: 'Untitled script'}</title>
+        <title>Gremlin web console - ${script?.title ?: 'Untitled script'}</title>
 
         <link rel="alternate"
                 type="application/atom+xml"
                 href="/atom.groovy"
-                title="Groovy Web Console snippets atom feed"
+                title="Gremlin Web Console snippets atom feed"
         />
 
         <link rel="stylesheet" type="text/css" href="/css/redmond/jquery-ui-1.7.1.custom.css"/>
@@ -38,7 +38,7 @@
     <body>
         <script src="/js/view.js" type="text/javascript"></script>
     
-        <h1><a href="/">Groovy web console</a></h1>
+        <h1><a href="/">Gremlin web console</a></h1>
 
         <div id="shareThis">
             <table cellspacing="20">

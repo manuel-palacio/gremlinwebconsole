@@ -1,16 +1,16 @@
-$(document).ready(function() {
-    $(function() {
+$(document).ready(function () {
+    $(function () {
         $("#tabs").tabs();
-        $("#textarea-container").resizable({ handles: 's', alsoResize: 'iframe' });
+        $("#textarea-container").resizable({ handles:'s', alsoResize:'iframe' });
 
         $("#dialog").dialog({
-            bgiframe: true,
-            autoOpen: false,
-            height: 400,
-            width: 330,
-            modal: true,
-            buttons: {
-                Submit: function() {
+            bgiframe:true,
+            autoOpen:false,
+            height:400,
+            width:330,
+            modal:true,
+            buttons:{
+                Submit:function () {
                     $("#captchaQuestion").val($("#dialogCaptchaQuestion").val());
                     $("#captchaAnswer").val($("#dialogCaptchaAnswer").val());
                     $("#title").val($("#dialogTitle").val());
@@ -22,13 +22,43 @@ $(document).ready(function() {
                 }
             }
         });
+
+        $("#friendsGraphInfoDialog").dialog({
+            bgiframe:true,
+            autoOpen:false,
+            height:500,
+            width:530,
+            modal:true
+
+
+        });
+
+        $("#tinkerGraphInfoDialog").dialog({
+            bgiframe:true,
+            autoOpen:false,
+            height:500,
+            width:530,
+            modal:false
+
+
+        });
+
+        $("#moviesGraphInfoDialog").dialog({
+            bgiframe:true,
+            autoOpen:false,
+            height:500,
+            width:430,
+            modal:true
+
+
+        });
     });
 
-    $("#captchaOperation").load("/captchaquestion.groovy", function(responseText) {
+    $("#captchaOperation").load("/captchaquestion.groovy", function (responseText) {
         $("#dialogCaptchaQuestion").val(responseText);
     });
 
-    $("#publishButton").click(function(event) {
+    $("#publishButton").click(function (event) {
         var code = editor.getCode();
         // better trim() function than JQuery's
         if (code.replace(/^\s+|\s+$/g, '').length > 0) {
@@ -40,13 +70,30 @@ $(document).ready(function() {
         }
     });
 
-    $("#executeButton").click(function(event) {
+    $("#graphInfoButton").click(function (event) {
+        var graphOption = $('#graphOption').val()
+        if (graphOption.indexOf("TinkerGraph") != -1) {
+            $('#tinkerGraphInfoDialog').dialog('open');
+            event.preventDefault();
+        }
+        if (graphOption.indexOf("createFriendsGraph") != -1) {
+            $('#friendsGraphInfoDialog').dialog('open');
+            event.preventDefault();
+        }
+        if (graphOption.indexOf("createMovieGraph") != -1) {
+            $('#moviesGraphInfoDialog').dialog('open');
+            event.preventDefault();
+        }
+
+    });
+
+    $("#executeButton").click(function (event) {
         $.ajax({
-            type: "POST",
-            url: "/executor.groovy",
-            data: { script: editor.getCode() },
-            dataType: "json",
-            complete: function (xhr, status) {
+            type:"POST",
+            url:"/executor.groovy",
+            data:{ script:editor.getCode() },
+            dataType:"json",
+            complete:function (xhr, status) {
                 if (status === 'error' || !xhr.responseText) {
                     alert("Error interacting with the Groovy web console server: " + status);
                 } else {
@@ -55,7 +102,7 @@ $(document).ready(function() {
                         data = $.parseJSON(xhr.responseText);
                     } catch (e) {
                         alert("Impossible to parse JSON response: " + e);
-                        data = {executionResult: "", outputText: "", stacktraceText: ""};
+                        data = {executionResult:"", outputText:"", stacktraceText:""};
                     }
 
                     $('#output').text(data.outputText);
@@ -90,13 +137,20 @@ $(document).ready(function() {
     });
 
     $('#loadingDiv')
-            .hide()
-            .ajaxStart(function() {
-                $(this).show();
-            })
-            .ajaxStop(function() {
-                $(this).hide();
-            });
+        .hide()
+        .ajaxStart(function () {
+            $(this).show();
+        })
+        .ajaxStop(function () {
+            $(this).hide();
+        });
+
+
+    $('#loadGraphButton').click(function () {
+        editor.setCode($('#graphOption').val());
+    });
 
 
 });
+
+

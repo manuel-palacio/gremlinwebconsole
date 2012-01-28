@@ -36,6 +36,7 @@ try {
         sb << "import " + imps + ";";
     }
     sb << "import static org.gremlinconsole.SpringApplicationContext.*;"
+    sb << "import static org.gremlinconsole.FriendsGraphFactory.*;"
     scriptText = sb.toString() + "com.tinkerpop.gremlin.groovy.Gremlin.load();" + scriptText
     result = new GroovyShell(aBinding).evaluate(scriptText)
 } catch (MultipleCompilationErrorsException e) {
