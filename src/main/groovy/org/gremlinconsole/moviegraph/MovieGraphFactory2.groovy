@@ -10,7 +10,7 @@ import com.tinkerpop.blueprints.pgm.impls.tg.TinkerGraph
 import com.googlecode.objectify.Query
 import com.tinkerpop.gremlin.Tokens
 
-@Component("movieGraphFactory")
+//@Component("movieGraphFactory")
 public class MovieGraphFactory2 extends DAOBase {
 
     static {

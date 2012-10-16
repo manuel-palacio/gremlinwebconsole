@@ -12,7 +12,7 @@ class MovieGraphFactory {
 
     Graph graph
 
-    @PostConstruct
+    //@PostConstruct
     void createGraph() {
 
         Gremlin.load()
