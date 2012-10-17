@@ -27,11 +27,11 @@
                 <span class="gwcPublished">
                     <img src="/images/date.png" align="top">
                     Published ${new com.ocpsoft.pretty.time.PrettyTime().format(entity.dateCreated)}
-                    on the <a href="http://gremlinconsole.appspot.com/script/${entity.key.id}">Gremlin Web Console</a>
+                    on the <a href="http://gremlinwebconsole.appspot.com/script/${entity.key.id}">Gremlin Web Console</a>
                 </span>
                 <span class="gwcAuthor">
                     by <img src="/images/user.png" align="top">
-                    <a href="http://gremlinconsole.appspot.com/author/${URLEncoder.encode(entity.author)}">${entity.author}</a>
+                    <a href="http://gremlinwebconsole.appspot.com/author/${URLEncoder.encode(entity.author)}">${entity.author}</a>
                 </span>
             </div>
             <pre class="brush:groovy">${entity.script.value.replaceAll('<', '&lt;')}</pre>

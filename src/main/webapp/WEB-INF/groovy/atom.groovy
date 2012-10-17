@@ -22,7 +22,7 @@ def mkp = new MarkupBuilder(out)
 mkp.feed(xmlns: "http://www.w3.org/2005/Atom") {
     title "Gremlin Web Console for the Groovy Programming Language"
     subtitle "Sharing Gremlin snippets, one script at a time"
-    link href: "http://gremlinconsole.appspot.com", rel: "self"
+    link href: "http://gremlinwebconsole.appspot.com", rel: "self"
     updated isoTime.format(entities[0].dateCreated)
     author {
         name "Guillaume Laforge"
@@ -36,7 +36,7 @@ mkp.feed(xmlns: "http://www.w3.org/2005/Atom") {
         entry {
             id entity.key.id
             title titleText
-            link href: "http://gremlinconsole.appspot.com/script/${entity.key.id}"
+            link href: "http://gremlinwebconsole.appspot.com/script/${entity.key.id}"
             updated isoTime.format(entity.dateCreated)
             summary "Gremlin snippet posted by ${authorText} on the Groovy Web Console on ${prettyDate.format(entity.dateCreated)}."
             author {

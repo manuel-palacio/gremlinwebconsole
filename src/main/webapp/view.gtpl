@@ -54,7 +54,7 @@
                         </a>
                     </td>
                     <td>
-                        <a href="#" onclick="return TweetAndTrack.open(this, 'http://gremlinconsole.appspot.com/script/${script.key.id}');">
+                        <a href="#" onclick="return TweetAndTrack.open(this, 'http://gremlinwebconsole.appspot.com/script/${script.key.id}');">
                             <span style="display:none;">${script.title} (via #groovywebconsole)</span>
                             <table>
                                 <tr>
@@ -111,7 +111,7 @@
         <div id="commentsArea">
             <script>
                 var idcomments_acct = 'ffac2056f3a0f603b8799858d3af8299';
-                var idcomments_post_id = 'http://gremlinconsole.appspot.com/view.groovy?id=${script.key.id}';
+                var idcomments_post_id = 'http://gremlinwebconsole.appspot.com/view.groovy?id=${script.key.id}';
                 var idcomments_post_url;
                 </script>
                 <span id="IDCommentsPostTitle" style="display:none"></span>
