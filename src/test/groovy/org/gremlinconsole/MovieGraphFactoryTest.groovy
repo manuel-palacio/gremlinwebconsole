@@ -1,12 +1,16 @@
 package org.gremlinconsole
 
+import org.gremlinconsole.moviegraph.MovieGraphFactory
+import com.tinkerpop.gremlin.groovy.Gremlin
+
 class MovieGraphFactoryTest extends GroovyTestCase {
 
     void testBuildGraph() {
-        MovieGraphFactory movieGraphFactory = new MovieGraphFactory()
 
-        movieGraphFactory.createGraph()
-        assert movieGraphFactory.V.count() > 0
+        Gremlin.load()
+
+        def g = MovieGraphFactory.getInstance().getGraph()
+        assert g.V.count() > 0
 
     }
 
