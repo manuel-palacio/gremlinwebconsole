@@ -1,38 +1,38 @@
 package org.gremlinconsole.moviegraph
 
-import com.tinkerpop.blueprints.pgm.Graph
-import com.tinkerpop.blueprints.pgm.impls.tg.TinkerGraph
+import com.tinkerpop.blueprints.Graph
+import com.tinkerpop.blueprints.impls.tg.TinkerGraph
+import com.tinkerpop.gremlin.groovy.Gremlin
 import com.tinkerpop.gremlin.Tokens
 
-@Singleton
 public class MovieGraphFactory {
 
 
-    Graph graph
+    static Graph graph
 
-    private MovieGraphFactory() {
 
-        graph = createMovieGraph()
-    }
+    static def createMovieGraph() {
 
-    private def createMovieGraph() {
+       // Gremlin.load()
+
+        if(graph !=  null) return graph
 
         graph = new TinkerGraph()
 
-        def genre = [:]
+      //  def genre = [:]
 
-        new File("data/u.genre").eachLine {
+        /*new File("data/u.genre").eachLine {
             def elements = it.split("\\|")
             if (elements.size() == 2) {
                 genre.put(elements[1], elements[0])
             }
-        }
+        }*/
 
         new File("data/movies.dat").eachLine {
             def elements = it.split("\\|")
-            def movieVertex = graph.addVertex(['type': 'Movie', 'movieId': elements[0].toInteger(), 'title': elements[1]])
+            graph.addVertex(['type': 'Movie', 'movieId': elements[0].toInteger(), 'title': elements[1]])
             int counter = 0
-            elements.each {
+            /*elements.each {
                 if (it == "1") {
                     def genera = genre.get(counter.toString())
                     if (genera) {
@@ -42,7 +42,7 @@ public class MovieGraphFactory {
                     }
                 }
                 counter++
-            }
+            }*/
         }
 
         new File('data/u.user').eachLine {def line ->
@@ -52,7 +52,7 @@ public class MovieGraphFactory {
 
         new File('data/u2.data').eachLine {def line ->
             def components = line.split('\\t')
-            def ratedEdge = graph.addEdge(graph.idx(Tokens.T.v)[[userId: components[0].toInteger()]].next(), graph.idx(Tokens.T.v)[[movieId: components[1].toInteger()]].next(), 'rated');
+            def ratedEdge = graph.addEdge(graph.V('userId',components[0].toInteger()).next(), graph.V('movieId', components[1].toInteger()).next(), 'rated');
             ratedEdge.setProperty('stars', components[2].toInteger());
         }
 

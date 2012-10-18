@@ -2,9 +2,12 @@ package org.gremlinconsole
 
 import org.gremlinconsole.moviegraph.MovieGraphFactory
 import com.tinkerpop.gremlin.groovy.Gremlin
+import org.junit.Test
 
-class MovieGraphFactoryTest extends GroovyTestCase {
+class MovieGraphFactoryTest {
 
+
+    @Test
     void testBuildGraph() {
 
         Gremlin.load()
@@ -14,7 +17,9 @@ class MovieGraphFactoryTest extends GroovyTestCase {
 
     }
 
-   void testFilterFile() {
+
+    @Test
+    void testFilterFile() {
         def newLines = []
         new File("data/u.data").eachLine {
             def components = it.split('\\t')

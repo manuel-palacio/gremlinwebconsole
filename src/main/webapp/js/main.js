@@ -23,15 +23,6 @@ $(document).ready(function () {
             }
         });
 
-        $("#friendsGraphInfoDialog").dialog({
-            bgiframe:true,
-            autoOpen:false,
-            height:500,
-            width:530,
-            modal:true
-
-
-        });
 
         $("#tinkerGraphInfoDialog").dialog({
             bgiframe:true,
@@ -76,10 +67,7 @@ $(document).ready(function () {
             $('#tinkerGraphInfoDialog').dialog('open');
             event.preventDefault();
         }
-        if (graphOption.indexOf("createFriendsGraph") != -1) {
-            $('#friendsGraphInfoDialog').dialog('open');
-            event.preventDefault();
-        }
+
         if (graphOption.indexOf("createMovieGraph") != -1) {
             $('#moviesGraphInfoDialog').dialog('open');
             event.preventDefault();
