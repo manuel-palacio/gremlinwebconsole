@@ -12,7 +12,7 @@ class MovieGraphFactoryTest {
 
         Gremlin.load()
 
-        def g = MovieGraphFactory.getInstance().getGraph()
+        def g = MovieGraphFactory.movieGraph
         assert g.V.count() > 0
 
     }

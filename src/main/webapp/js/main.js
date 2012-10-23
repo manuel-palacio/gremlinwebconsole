@@ -136,6 +136,17 @@ $(document).ready(function () {
 
     $('#loadGraphButton').click(function () {
         editor.setCode($('#graphOption').val());
+        var graphOption = $('#graphOption').val()
+        if (graphOption.indexOf("MovieGraphFactory") != -1) {
+            $.ajax({
+                type:"POST",
+                url:"/loadMovieGraph.groovy",
+                data:{},
+                dataType:"json"
+            });
+
+        }
+
     });
 
 
