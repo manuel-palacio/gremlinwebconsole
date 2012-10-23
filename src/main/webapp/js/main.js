@@ -27,8 +27,9 @@ $(document).ready(function () {
         $("#tinkerGraphInfoDialog").dialog({
             bgiframe:true,
             autoOpen:false,
-            height:500,
-            width:530,
+            height:610,
+            position:['right', 20],
+            width:590,
             modal:false
 
 
@@ -37,6 +38,7 @@ $(document).ready(function () {
         $("#moviesGraphInfoDialog").dialog({
             bgiframe:true,
             autoOpen:false,
+            position:['right', 20],
             height:500,
             width:430,
             modal:true
